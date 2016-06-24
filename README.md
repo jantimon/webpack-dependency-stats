@@ -1,4 +1,4 @@
-Webpack Depndency Stats
+Webpack Dependency Stats
 ========================================
 [![npm version](https://badge.fury.io/js/webpack-dependency-stats.svg)](http://badge.fury.io/js/webpack-dependency-stats) [![Dependency Status](https://david-dm.org/jantimon/webpack-dependency-stats.svg)](https://david-dm.org/jantimon/webpack-dependency-stats) [![Build status](https://travis-ci.org/jantimon/webpack-dependency-stats.svg)](https://travis-ci.org/jantimon/webpack-dependency-stats) [![Build status](https://ci.appveyor.com/api/projects/status/u0798wdxt4qho7xq/branch/master?svg=true)](https://ci.appveyor.com/project/jantimon/webpack-dependency-stats/branch/master)
  [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
