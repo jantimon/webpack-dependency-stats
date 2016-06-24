@@ -35,6 +35,10 @@ WebpackDependencyStats.prototype.getAllDependencies = function () {
   return this.cache.dependencies;
 };
 
+WebpackDependencyStats.prototype.getModuleNames = function () {
+  return Object.keys(this.modules.byName);
+};
+
 WebpackDependencyStats.prototype.getDependencies = function (moduleName) {
   return this.getDependencyIds(moduleName)
     .map((id) => WebpackDependencyStats.stripLoaders(this.modules.byId[id].name));
@@ -86,7 +90,9 @@ WebpackDependencyStats.prototype.getDependentIdsById = function (id) {
 
   module.reasons.forEach((reason) => {
     addDependent(reason.moduleId);
-    this.getDependentIdsById(reason.moduleId).forEach(addDependent);
+    if (this.modules.byId[reason.moduleId]) {
+      this.getDependentIdsById(reason.moduleId).forEach(addDependent);
+    }
   });
 
   return _.differenceWith(_.sortedUniq(dependents), this.contextHelpers.ids);

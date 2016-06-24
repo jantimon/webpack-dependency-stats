@@ -39,6 +39,17 @@ test('extracts modules from stats', t => {
   t.deepEqual(expectedIds, moduleIds);
 });
 
+test('extracts modules names from stats', t => {
+  var {byId, byName} = WebpackDependencyStats.extractModuleData(stats, {
+    srcFolder: path.resolve(__dirname, 'fixtures/demo/')
+  });
+  var webpackDependencyStats = new WebpackDependencyStats(stats, {
+    srcFolder: path.resolve(__dirname, 'fixtures/demo/')
+  });
+  var moduleNames = Object.keys(byName);
+  t.deepEqual(moduleNames, webpackDependencyStats.getModuleNames());
+});
+
 test('throws on unknown module', t => {
   var webpackDependencyStats = new WebpackDependencyStats(stats, {
     srcFolder: path.resolve(__dirname, 'fixtures/demo/')

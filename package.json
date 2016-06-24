@@ -1,6 +1,6 @@
 {
   "name": "webpack-dependency-stats",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extracts a flat list of all dependencies and dependents of a given webpack module",
   "main": "index.js",
   "files": [
