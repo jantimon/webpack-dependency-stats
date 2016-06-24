@@ -20,7 +20,7 @@ WebpackDependencyStats.prototype.getAllDependencies = function () {
     return this.cache.dependencies;
   }
   var moduleIds = Object.keys(this.modules.byId).map((id) => this.modules.byId[id].id);
-  moduleIds.forEach((id) => this.cache.dependencies[id] = []);
+  moduleIds.forEach((id) => { this.cache.dependencies[id] = []; });
 
   moduleIds
     .map((id) => ({ id: id, depenedents: this.getDependentIdsById(id) }))
@@ -134,8 +134,8 @@ WebpackDependencyStats.getContextHelperNames = function (modules) {
 
 WebpackDependencyStats.stripLoaders = function (moduleName) {
   return moduleName
-    .replace(/^.+\!/, '')
-    .replace(/^.+\~/, '~');
+    .replace(/^.+[!]/, '')
+    .replace(/^.+[~]/, '~');
 };
 
 module.exports = WebpackDependencyStats;
