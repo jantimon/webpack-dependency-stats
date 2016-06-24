@@ -1,0 +1,38 @@
+{
+  "name": "webpack-dependency-stats",
+  "version": "0.0.1",
+  "description": "Extracts a flat list of all dependencies and dependents of a given webpack module",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "ava -v"
+  },
+  "author": "Jan Nicklas <j.nicklas@me.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "denodeify": "^1.2.1",
+    "html-loader": "^0.4.3",
+    "semistandard": "^8.0.0",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jantimon/webpack-dependency-stats.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "bugs": {
+    "url": "https://github.com/jantimon/webpack-dependency-stats/issues"
+  },
+  "homepage": "https://github.com/jantimon/webpack-dependency-stats#readme"
+}
