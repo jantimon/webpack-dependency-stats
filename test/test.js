@@ -20,7 +20,10 @@ test.before(async t => {
 });
 
 test('extracts modules from stats', t => {
-  var {byId, byName} = WebpackDependencyStats.extractModuleData(stats, {
+  var webpackDependencyStats = new WebpackDependencyStats(stats, {
+    srcFolder: path.resolve(__dirname, 'fixtures/demo/')
+  })
+  var {byId, byName} = webpackDependencyStats.extractModuleData(stats, {
     srcFolder: path.resolve(__dirname, 'fixtures/demo/')
   });
   var moduleNames = Object.keys(byName);
@@ -32,7 +35,8 @@ test('extracts modules from stats', t => {
     './space/earth/index.js',
     './space/earth/ocean/island.js',
     './space/earth/ocean/text.html',
-    './space/earth/europe/index.js'
+    './space/earth/europe/index.js',
+    './another-entry.js'
   ]);
   var expectedIds = _.values(byName).map((module) => `${module.id}`);
   var moduleIds = Object.keys(byId);
@@ -40,7 +44,10 @@ test('extracts modules from stats', t => {
 });
 
 test('extracts modules names from stats', t => {
-  var {byId, byName} = WebpackDependencyStats.extractModuleData(stats, {
+  var webpackDependencyStats = new WebpackDependencyStats(stats, {
+    srcFolder: path.resolve(__dirname, 'fixtures/demo/')
+  })
+  var {byId, byName} = webpackDependencyStats.extractModuleData(stats, {
     srcFolder: path.resolve(__dirname, 'fixtures/demo/')
   });
   var webpackDependencyStats = new WebpackDependencyStats(stats, {

@@ -1,6 +1,6 @@
 {
   "name": "webpack-dependency-stats",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Extracts a flat list of all dependencies and dependents of a given webpack module",
   "main": "index.js",
   "files": [
@@ -11,7 +11,7 @@
     "posttest": "npm-run-all posttest:*",
     "posttest:lint": "semistandard index.js",
     "posttest:coverage-report": "nyc report --reporter=html",
-    "posttest:coverage": "nyc check-coverage --lines 95 --functions 95 --branches 90",
+    "posttest:coverage": "nyc check-coverage --lines 100 --functions 100 --branches 100",
     "prepublish": "npm test"
   },
   "author": "Jan Nicklas <j.nicklas@me.com>",

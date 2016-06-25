@@ -44,17 +44,25 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	console.log(__webpack_require__(1));
-	__webpack_require__(2);
+	__webpack_require__(1);
+	module.exports = __webpack_require__(11);
+
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	console.log(__webpack_require__(2));
+	__webpack_require__(3);
+
+/***/ },
+/* 2 */
 /***/ function(module, exports) {
 
 	module.exports = "Hello";
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63,15 +71,15 @@
 	  return requireContext.keys().map(requireContext);
 	}
 
-	requireAll(__webpack_require__(3));
+	requireAll(__webpack_require__(4));
 
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./index.js": 4
+		"./index.js": 5
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -84,38 +92,38 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 3;
+	webpackContext.id = 4;
 
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(5);
-	__webpack_require__(7);
 
 /***/ },
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	console.log(__webpack_require__(6));
+	__webpack_require__(6);
+	__webpack_require__(8);
 
 /***/ },
 /* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	console.log(__webpack_require__(7));
+
+/***/ },
+/* 7 */
 /***/ function(module, exports) {
 
 	module.exports = "Some text";
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(5);
-	__webpack_require__(8);
+	__webpack_require__(6);
+	__webpack_require__(9);
 
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -16523,10 +16531,10 @@
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module), (function() { return this; }())))
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -16540,6 +16548,12 @@
 		return module;
 	}
 
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	
 
 /***/ }
 /******/ ]);
