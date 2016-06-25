@@ -7,16 +7,22 @@
     "index.js"
   ],
   "scripts": {
-    "test": "ava -v",
-    "posttest": "semistandard index.js",
+    "test": "nyc ava -v",
+    "posttest": "npm-run-all posttest:*",
+    "posttest:lint": "semistandard index.js",
+    "posttest:coverage-report": "nyc report --reporter=html",
+    "posttest:coverage": "nyc check-coverage --lines 95 --functions 95 --branches 90",
     "prepublish": "npm test"
   },
   "author": "Jan Nicklas <j.nicklas@me.com>",
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.15.2",
+    "coveralls": "^2.11.9",
     "denodeify": "^1.2.1",
     "html-loader": "^0.4.3",
+    "npm-run-all": "^2.2.2",
+    "nyc": "^6.6.1",
     "semistandard": "^8.0.0",
     "webpack": "^1.13.1"
   },

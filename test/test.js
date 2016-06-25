@@ -54,6 +54,22 @@ test('throws on unknown module', t => {
   var webpackDependencyStats = new WebpackDependencyStats(stats, {
     srcFolder: path.resolve(__dirname, 'fixtures/demo/')
   });
+  var err = getErrorMessage(() => webpackDependencyStats.getDependentIdsById(999));
+  t.is(err, `Module "999" was not found in webpack stats`);
+});
+
+test('throws on unknown module', t => {
+  var webpackDependencyStats = new WebpackDependencyStats(stats, {
+    srcFolder: path.resolve(__dirname, 'fixtures/demo/')
+  });
+  var err = getErrorMessage(() => webpackDependencyStats.getDependencyIds('fancy'));
+  t.is(err, `Module "fancy" was not found in webpack stats`);
+});
+
+test('throws on unknown module', t => {
+  var webpackDependencyStats = new WebpackDependencyStats(stats, {
+    srcFolder: path.resolve(__dirname, 'fixtures/demo/')
+  });
   var err = getErrorMessage(() => webpackDependencyStats.getDependents('fancy'));
   t.is(err, `Module "fancy" was not found in webpack stats`);
 });
@@ -85,6 +101,15 @@ test('extracts dependencies of module', t => {
     './space/earth/ocean/text.html',
     './space/earth/europe/index.js'
   ]);
+});
+
+
+test('extracts dependencies of module from cache', t => {
+  var webpackDependencyStats = new WebpackDependencyStats(stats, {
+    srcFolder: path.resolve(__dirname, 'fixtures/demo/')
+  });
+  var dependencies = webpackDependencyStats.getDependencies('./entry.js');
+  t.deepEqual(dependencies, webpackDependencyStats.getDependencies('./entry.js'));
 });
 
 
